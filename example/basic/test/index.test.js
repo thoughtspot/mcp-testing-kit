@@ -55,5 +55,16 @@ describe("Basic MCP server", () => {
             expect(prompts.prompts.length).toEqual(1);
             expect(prompts.prompts[0].name).toEqual("greeting-template");
         });
+
+        it("Should return the correct prompt for the greeting-template prompt", async () => {
+            const client = await connect(server);
+            const prompt = await client.getPrompt("greeting-template", {
+                name: "John",
+            });
+            expect(prompt.messages[0].role).toEqual("user");
+            console.log(prompt.messages[0].content);
+            expect(prompt.messages[0].content.type).toEqual("text");
+            expect(prompt.messages[0].content.text).toEqual("Please greet John in a friendly manner.");
+        });
     });
 });

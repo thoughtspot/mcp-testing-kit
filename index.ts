@@ -1,7 +1,7 @@
 import { consola } from "consola";
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { Transport } from "@modelcontextprotocol/sdk/shared/transport.js";
-import { isJSONRPCError, isJSONRPCNotification, JSONRPCMessage, JSONRPCNotification, JSONRPCResponse, ListToolsResult, JSONRPCError, ListResourcesResult, ProgressNotificationSchema, ListToolsRequestSchema, CallToolRequestSchema, ListResourcesRequestSchema, JSONRPCRequest, Request, ListPromptsRequestSchema, ListPromptsResult, isJSONRPCResponse } from "@modelcontextprotocol/sdk/types.js";
+import { isJSONRPCError, isJSONRPCNotification, JSONRPCMessage, JSONRPCNotification, JSONRPCResponse, ListToolsResult, JSONRPCError, ListResourcesResult, ProgressNotificationSchema, ListToolsRequestSchema, CallToolRequestSchema, ListResourcesRequestSchema, JSONRPCRequest, Request, ListPromptsRequestSchema, ListPromptsResult, isJSONRPCResponse, GetPromptRequestSchema } from "@modelcontextprotocol/sdk/types.js";
 
 class TestTransport implements Transport {
     constructor(private recieverCb: (message: JSONRPCMessage) => void) { }
@@ -108,6 +108,16 @@ export function connect(server: Server) {
                 method: ListPromptsRequestSchema.shape.method.value,
             });
             return message.result as ListPromptsResult;
+        },
+        getPrompt: async (prompt: string, params: any = {}) => {
+            const message = await sendToServer<JSONRPCResponse>({
+                method: GetPromptRequestSchema.shape.method.value,
+                params: {
+                    name: prompt,
+                    arguments: params,
+                },
+            });
+            return message.result;
         }
     }
 }
