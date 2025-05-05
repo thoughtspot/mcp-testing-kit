@@ -1,0 +1,35 @@
+{
+  "name": "mcp-testing-kit",
+  "version": "0.1.0",
+  "description": "The testing library you need to test your MCP servers",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "example:basic": "cd example/basic && vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thoughtspot/mcp-therapy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thoughtspot/mcp-therapy/issues"
+  },
+  "homepage": "https://github.com/thoughtspot/mcp-therapy#readme",
+  "peerDependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
+  },
+  "dependencies": {
+    "consola": "^3.4.2"
+  }
+}
