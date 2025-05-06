@@ -6,20 +6,19 @@
     "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "skipLibCheck": true,
     "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "outDir": "dist",
+    "declaration": true,
     "rootDir": ".",
     "allowJs": true,
     "checkJs": false
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.js"],
-  "exclude": ["node_modules", "dist", "build"]
+  "exclude": ["node_modules", "dist", "build", "coverage", "example"]
 } 

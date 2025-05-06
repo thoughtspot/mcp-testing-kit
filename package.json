@@ -1,15 +1,17 @@
 {
   "name": "mcp-testing-kit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The testing library you need to test your MCP servers",
   "main": "dist/index.js",
   "exports": {
     ".": "./dist/index.js"
   },
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "example:basic": "cd example/basic && vitest run",
-    "test": "vitest run --coverage"
+    "test": "vitest run --coverage",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
