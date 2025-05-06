@@ -70,6 +70,11 @@ describe("Basic MCP server", () => {
 });
 ```
 
+## How it works
+
+- Creates a dummy transport layer to connect to the MCP Server directly instead of relying on HTTP/SSE.
+- Provides abstractions for invoking the tools/resources/prompts directly on the server.
+
 ## API
 
 ### `connect(server: Server)`
