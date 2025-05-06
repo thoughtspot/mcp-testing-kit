@@ -1,4 +1,5 @@
-# mcp-testing-kit </br> [![Coverage Status](https://coveralls.io/repos/github/thoughtspot/mcp-testing-kit/badge.svg?branch=main)](https://coveralls.io/github/thoughtspot/mcp-testing-kit?branch=main)
+# mcp-testing-kit </br> [![Coverage Status](https://coveralls.io/repos/github/thoughtspot/mcp-testing-kit/badge.svg?branch=main)](https://coveralls.io/github/thoughtspot/mcp-testing-kit?branch=main) ![NPM Version](https://img.shields.io/npm/v/mcp-testing-kit?link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fmcp-testing-kit)
+
 
 The testing library you need to test your MCP servers.
 
